@@ -1,4 +1,4 @@
-package com.yoomy.nest.mobile
+package com.yoomy.nest.mobile.features.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,13 +12,17 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor() : ViewModel() {
 
-    private val _isLoading = MutableStateFlow(true)
-    val isLoading = _isLoading.asStateFlow()
+    private val _isAppReady = MutableStateFlow(false)
+    val isAppReady = _isAppReady.asStateFlow()
 
     init {
+        initializeApp()
+    }
+
+    private fun initializeApp() {
         viewModelScope.launch {
             delay(LOADING_TASK_DELAY)
-            _isLoading.value = false
+            _isAppReady.value = true
         }
     }
 

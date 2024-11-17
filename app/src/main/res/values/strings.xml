@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">yoomy-nest</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_activity">Activity</string>
 </resources>

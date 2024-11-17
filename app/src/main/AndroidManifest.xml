@@ -34,7 +34,7 @@
             android:value="false" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".features.main.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize"
             android:exported="true"
             android:launchMode="singleTask"
