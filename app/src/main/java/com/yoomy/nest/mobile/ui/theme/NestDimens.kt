@@ -11,6 +11,8 @@ open class NestDimens {
 
     open val padding: Dp = SpacingScale.M
 
+    val statusBarHeight: Dp = 24.dp
+
     object SpacingScale {
         val None = 0.dp
         val XS4 = 1.dp

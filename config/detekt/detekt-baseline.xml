@@ -3,5 +3,6 @@
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
     <ID>MatchingDeclarationName:MainNavigation.kt$MainNavigationItem</ID>
+    <ID>MatchingDeclarationName:ActivityNavigation.kt$ActivityNavigationItem</ID>
   </CurrentIssues>
 </SmellBaseline>

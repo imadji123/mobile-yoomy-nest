@@ -131,6 +131,7 @@ detekt-compose = { module = "com.twitter.compose.rules:detekt", version.ref = "d
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 hilt-compiler-androidx = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltAndroidx" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltAndroidx"}
 leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakCanary" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }

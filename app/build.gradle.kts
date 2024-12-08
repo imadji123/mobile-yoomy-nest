@@ -133,6 +133,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
 
     implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
     ksp(libs.hilt.compiler)
     ksp(libs.hilt.compiler.androidx)
 

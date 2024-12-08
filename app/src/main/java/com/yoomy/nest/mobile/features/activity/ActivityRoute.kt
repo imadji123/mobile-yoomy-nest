@@ -1,15 +1,50 @@
 package com.yoomy.nest.mobile.features.activity
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.navigation.NavController
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ActivityRoute(modifier: Modifier = Modifier) {
-    Column(
-        modifier = modifier.fillMaxSize()
-    ) {
-        ActivityScreen()
+fun ActivityRoute(
+    navController: NavController,
+    modifier: Modifier = Modifier,
+    viewModel: ActivityViewModel = hiltViewModel()
+) {
+    val lifecycleOwner = LocalLifecycleOwner.current
+
+    DisposableEffect(lifecycleOwner) {
+        lifecycleOwner.lifecycle.addObserver(viewModel)
+
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(viewModel)
+        }
+    }
+
+    Scaffold(
+        modifier = modifier.fillMaxSize(),
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(text = "Activity")
+                }
+            )
+        }
+    ) { innerPadding ->
+        ActivityScreen(
+            modifier = Modifier.padding(paddingValues = innerPadding),
+            onActivityClick = { activityId ->
+                navController.navigate(ActivityNavigationItem.Detail.route + "/$activityId")
+            }
+        )
     }
 }
